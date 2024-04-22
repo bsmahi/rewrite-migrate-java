@@ -77,6 +77,7 @@ public class StringFormatted extends Recipe {
             Expression select = wrapperNotNeeded ? arguments.get(0) :
                 new J.Parentheses<>(randomId(), Space.EMPTY, Markers.EMPTY, JRightPadded.build(arguments.get(0)));
             mi = mi.withSelect(select);
+            mi = mi.withPrefix(Space.SINGLE_SPACE);
             mi = mi.withArguments(arguments.subList(1, arguments.size()));
             if(mi.getArguments().isEmpty()) {
                 // To store spaces between the parenthesis of a method invocation argument list
